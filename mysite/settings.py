@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = Env()
 env_path = BASE_DIR / ".env"
 if env_path.exists():
-    with env_path.open("rtm", encoding="utf8") as f:
+    with env_path.open("rt", encoding="utf8") as f:
         env.read_env(f, overwrite=True)
 
 # Quick-start development settings - unsuitable for production
