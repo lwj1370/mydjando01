@@ -146,4 +146,22 @@ EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
 
 DEFAULT_FROM_EMAIL = f"{EMAIL_HOST_USER}@naver.com"
 
+# 로그인 성공시 리다이렉트 url 설정 작업
 LOGIN_REDIRECT_URL = "/app/"
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "class": "logging.StreamHandler",
+        },
+    },
+    "loggers": {
+        "django.db.backends": {
+            "handlers": ["console"],
+            "level": "DEBUG",
+        }
+    },
+}
